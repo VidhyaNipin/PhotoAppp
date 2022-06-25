@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Search</title>
+</head>
+<body>
+
+<h1>Enter Caption Name to Search</h1>
+
+<form action="{% url 'searchcaption' %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name="caption_name">
+    <input type="submit" name="submit" value="Search">
+</form>
+
+
+{% for result in results %}
+
+    <p>Author Name  {{result.author_name}}</p>
+    <p>Caption Name {{result.caption_name}}</p>
+
+<div>
+        <img  src="{{ result.profile_image.url }} " alt="No Image" style="height:100px;"/>
+    </div>
+
+
+{% endfor %}
+
+</body>
+</html>
+
+
+

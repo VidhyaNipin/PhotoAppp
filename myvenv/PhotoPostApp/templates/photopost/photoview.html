@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django Search</title>
+</head>
+<body>
+{% for result in results %}
+
+    <div>
+        <div style="float:left; width:200px; height:200px;">
+        <img  src="{{ result.profile_image.url }} " alt="No Image" class="img-thumbnail"style="height:100px;"/>
+
+<!--<button onclick="myFunction()" id="myButton1">Like</button>-->
+            <button id="demo" onclick="myFunction()">Like .</button>
+
+        </div>
+    </div>
+
+{% endfor %}
+<script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Liked";
+}
+</script>
+
+</body>
+</html>
+
